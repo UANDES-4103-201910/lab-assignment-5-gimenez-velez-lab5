@@ -1,10 +1,22 @@
 class EventsController < ApplicationController
   def create
-		@event = Event.new(user_params)
+		@event = Event.new(event_params)
+		render json: @event
   end
+
+	def index
+	  @event = Event.all
+		render json: @event
+	end
+	 
+	def show
+	  @event = Event.find_by(id: params[:id])
+		render json: @event
+	end
 
   def update
 		@event.update_attributes(params[:event])
+		render json: @event
   end
 
   def destroy
