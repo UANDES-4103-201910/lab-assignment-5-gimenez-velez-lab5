@@ -1,16 +1,16 @@
 class TicketTypesController < ApplicationController
    def create
-		@ticket_type = Ticket_type.new(ticket_type_params)
+		@ticket_type = TicketType.new(ticket_type_params)
 		render json: @ticket_type
   end
 
 	def index
-	  @ticket_type = Ticket.all
+	  @ticket_type = TicketType.all
 		render json: @ticket_type
 	end
 	 
 	def show
-	  @ticket_type = Ticket_type.find_by(id: params[:id])
+	  @ticket_type = TicketType.find_by(id: params[:id])
 		render json: @ticket_type
 	end
 
@@ -21,6 +21,7 @@ class TicketTypesController < ApplicationController
 
   def destroy
 		session[:ticket_type_id] = nil
-    @ticket_type = Ticket_type.find(params[:id])
+    @ticket_type = TicketType.find(params[:id])
     @ticket_type.destroy
   end
+end
