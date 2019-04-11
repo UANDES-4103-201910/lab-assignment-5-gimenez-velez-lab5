@@ -24,5 +24,8 @@ Rails.application.routes.draw do
 	get 'users', to: 'users#index'
   get 'users/update/:id', to: 'users#update'
   get 'users/destroy'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ 
+	resources :ticket_types do
+		resources :tickets
+	end
 end
