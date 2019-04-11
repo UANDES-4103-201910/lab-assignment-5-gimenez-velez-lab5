@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  def create
-		@user = User.new(user_params)
+	def create
+		@user = User.create(:name => params[:name], :lastname => params[:lastname], :email => params[:email], :password => params[:password], :address => params[:address])
 		render json: @user
-  end
+	end
+
 
 	def index
 	  @user = User.all
