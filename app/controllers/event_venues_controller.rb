@@ -15,6 +15,7 @@ class EventVenuesController < ApplicationController
 	end
 
  	def update
+		 @event_venue = EventVenue.find_by(id: params[:id])
 		@event_venue.update_attributes(params[:event_venue])
 		render json: @event_venue
  	end

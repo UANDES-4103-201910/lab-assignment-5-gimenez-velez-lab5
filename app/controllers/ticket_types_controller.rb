@@ -15,6 +15,7 @@ class TicketTypesController < ApplicationController
 	end
 
   def update
+		@ticket_type = TicketType.find_by(id: params[:id])
 		@ticket_type.update_attributes(params[:ticket_type])
 		render json: @ticket_type
   end

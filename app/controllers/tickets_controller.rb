@@ -15,6 +15,7 @@ class TicketsController < ApplicationController
 	end
 
   def update
+		 @ticket = Ticket.find_by(id: params[:id])
 		@ticket.update_attributes(params[:ticket])
 		render json: @ticket
   end
