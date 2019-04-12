@@ -24,8 +24,5 @@ Rails.application.routes.draw do
 	get 'users', to: 'users#index'
   get 'users/update/:id', to: 'users#update'
   get 'users/destroy'
- 
-	resources :ticket_types do
-		resources :tickets
-	end
+	get 'tickets/:id/ticket_types', to: 'tickets#join'
 end

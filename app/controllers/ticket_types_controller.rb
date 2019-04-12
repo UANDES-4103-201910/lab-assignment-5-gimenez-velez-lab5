@@ -24,4 +24,5 @@ class TicketTypesController < ApplicationController
     @ticket_type = TicketType.find(params[:id])
     @ticket_type.destroy
   end
+	
 end
