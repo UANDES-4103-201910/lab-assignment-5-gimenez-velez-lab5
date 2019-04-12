@@ -24,4 +24,10 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
   end
+	
+	def upcoming
+			event = Event.where('start_date < ?', DateTime.now+90)
+			@event = event.where('start_date > ?', DateTime.now)
+			render json: @event
+	end
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'orders/most'
   get 'ticket_types/create'
 	get 'ticket_types/:id', to: 'ticket_types#show'
 	get 'ticket_types', to: 'ticket_types#index'
@@ -25,4 +26,6 @@ Rails.application.routes.draw do
   get 'users/update/:id', to: 'users#update'
   get 'users/destroy'
 	get 'ticket_types/:id/tickets', to: 'ticket_types#join'
+	get 'user_with_most_tickets', to: 'orders#most'
+	get 'upcoming_events', to: 'events#upcoming'
 end

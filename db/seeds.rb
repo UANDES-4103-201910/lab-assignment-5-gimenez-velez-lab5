@@ -78,5 +78,7 @@ for u in users do
     t.save!
   end
 end
+nuevaorden=Order.new(user_id:1)
+nuevaorden.save!
 
 

@@ -24,5 +24,6 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     @user = User.find(params[:id])
     @user.destroy
-  end
+  end	
+
 end
