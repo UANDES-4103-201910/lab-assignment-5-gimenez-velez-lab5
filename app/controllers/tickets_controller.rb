@@ -25,8 +25,4 @@ class TicketsController < ApplicationController
     @ticket.destroy
   end
 
-	def join
-		@jointable = Ticket.where("ticket_type_id=?",params[:id])
-		render json: @jointable
-	end
 end

@@ -24,5 +24,5 @@ Rails.application.routes.draw do
 	get 'users', to: 'users#index'
   get 'users/update/:id', to: 'users#update'
   get 'users/destroy'
-	get 'tickets/:id/ticket_types', to: 'tickets#join'
+	get 'ticket_types/:id/tickets', to: 'ticket_types#join'
 end
